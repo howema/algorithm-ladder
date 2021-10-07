@@ -32,6 +32,8 @@ end
 
 p array_sum([1, 2, 3, 4])
 
+#============================================================================
+
 # 2. Less Than 100
 
 # Given an array of numbers, write a function that returns a new array that contains all numbers from the original array that are less than 100.
@@ -70,3 +72,51 @@ def less_than_hundred(array)
 end
 
 p less_than_hundred([99, 101, 88, 4, 2000, 50])
+
+#============================================================================
+
+# 3. Map: double
+
+# Given an array of numbers, write a function that returns a new array whose values are the original array’s value doubled.
+
+# Input: [4, 2, 5, 99, -4]
+# Output: [8, 4, 10, 198, -8]
+
+def double(array)
+  output = []
+  i = 0
+  while i < array.length
+    output << array[i] * 2
+    i += 1
+  end
+  return output
+end
+
+p double([4, 2, 5, 99, -4])
+
+#============================================================================
+
+#4. Array Max
+
+# Write a function that returns the greatest value from an array of numbers.
+
+# Input: [5, 17, -4, 20, 12]
+# Output: 20
+
+# (After you complete the exercise successfully, I recommend watching this video: Think Like a Software Engineer Episode #50)
+
+def max(array)
+  max = array[0]
+  index = 1
+  while index < array.length
+    if array[index] > max
+      max = array[index]
+    end
+    index += 1
+  end
+  return max
+end
+
+p max([5, 17, -4, 20, 12])
+
+#============================================================================
