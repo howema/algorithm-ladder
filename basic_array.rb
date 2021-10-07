@@ -31,3 +31,42 @@ def array_sum(array)
 end
 
 p array_sum([1, 2, 3, 4])
+
+# 2. Less Than 100
+
+# Given an array of numbers, write a function that returns a new array that contains all numbers from the original array that are less than 100.
+
+# Input: [99, 101, 88, 4, 2000, 50]
+# Output: [99, 88, 4, 50]
+
+=begin
+create function
+call function
+add params
+return something
+index = 0
+new_array = []
+while loop through the array. index < array.length
+  if array[index] < 100
+    new_array << array[index]
+    index +=1
+  end
+end
+
+return new_array
+=end
+
+def less_than_hundred(array)
+  index = 0
+  new_array = []
+  while index < array.length
+    if array[index] < 100
+      new_array << array[index]
+    end
+    index += 1
+  end
+
+  return new_array
+end
+
+p less_than_hundred([99, 101, 88, 4, 2000, 50])
