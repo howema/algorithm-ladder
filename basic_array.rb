@@ -94,6 +94,18 @@ end
 
 p double([4, 2, 5, 99, -4])
 
+def doubled_values(array)
+  new_arr = []
+
+  array.each do |num|
+    new_arr << num * 2
+  end
+
+  new_arr
+end
+
+p doubled_values([4, 2, 5, 99, -4])
+
 #============================================================================
 
 #4. Array Max
@@ -120,3 +132,85 @@ end
 p max([5, 17, -4, 20, 12])
 
 #============================================================================
+
+# 5. Reduce: Product
+
+# Write a function that accepts an array of numbers and returns the product of all the numbers.
+
+# Input: [1, 2, 3, 4]
+# Output: 24
+
+# Explanation: (1 x 2 x 3 x 4) = 24
+
+def product_numbers(input)
+  i = 0
+  product = 1
+  while i < input.length
+    product = product * input[i]
+    i += 1
+  end
+  return product
+end
+
+p product_numbers([1, 2, 3, 4])
+
+#============================================================================
+
+# 6. Reverse Array
+
+# Given an array, write a function that returns an array that contains the original array’s values in reverse.
+
+# Input: [1, 2, 3, 4, 5]
+# Output: [5, 4, 3, 2, 1]
+
+# While Loop
+
+def reverse_array(array)
+  new_arr = []
+  i = array.length - 1
+
+  while i >= 0
+    new_arr << array[i]
+    i -= 1
+  end
+
+  new_arr
+end
+
+p reverse_array([1, 2, 3, 4, 5])   #=> [5, 4, 3, 2, 1]
+
+## Each Loop
+
+def reverse_array(array)
+  new_arr = []
+
+  array.reverse_each do |num|
+    new_arr << num
+  end
+
+  new_arr
+end
+
+p reverse_array([1, 2, 3, 4, 5])
+
+## Built-in Method
+
+def reverse_array(array)
+  array.reverse
+end
+
+p reverse_array([1, 2, 3, 4, 5])
+
+#============================================================================
+
+#7 Skip It ->
+
+# Given an array of numbers, write a function that returns a new array in which only select numbers from the original array are included, based on the following details:
+
+# The new array should always start with the first number from the original array. The next number that should be included depends on what the first number is. The first number dictates how many spaces to the right the computer should move to pick the next number. For example, if the first number is 2, then the next number that the computer should select would be two spaces to the right. This number gets added to the new array. If this next number happens to be a 4, then the next number after that is the one four spaces to the right. And so on and so forth until the end of the array is reached.
+
+# Input:
+# [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
+
+# Output:
+# [2, 3, 1, 2, 2, 1, 5, 2, 2]
