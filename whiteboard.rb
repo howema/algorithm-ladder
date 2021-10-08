@@ -1,14 +1,9 @@
-def dupe(string)
-  i = 1
-  output = string[0]
-  while i < string.length
-    if output == string[i]
-      return output
-    else
-      output = string[i]
-      i += 1
-    end
-  end
-end
+# 5. Palindrome
 
-p dupe("abcdefghijkkloooop")
+# Given a string, write a function that returns true if it is a palindrome, and false if it is not. (A palindrome is a word that reads the same both forward and backward.)
+
+# Input: “racecar”
+# Output: true
+
+# Input: “baloney”
+# Output: false
