@@ -118,9 +118,50 @@ p upcase("hello, how are your porcupines today?")
 # Input: "abcdefghhijkkloooop"
 # Output: "h"
 
+=begin
+  create function
+  call function
+  return something
+  add params
+
+  index1 = 0
+  index2 = 1
+  loop
+    while index1 < string.length
+
+      (if double_letter) 
+      if index1 == index2
+        p string[index1]
+        break
+      else
+        index1 +=1
+        index2 +=1
+      end
+    end
+    return?
+  end
+=end
+
+def duplicate(string)
+  index1 = 0
+  index2 = 1
+
+  while index1 < string.length
+    if string[index1] == string[index2]
+      p string[index1]
+      break   #need this or else infinite
+    else
+      index1 += 1
+      index2 += 1
+    end
+  end
+end
+
+duplicate("abcdefghhijkkloooop")
+
 def dupe(string)
-  output = string[0]
   i = 1
+  output = string[0]
   while i < string.length
     if output == string[i]
       return output
