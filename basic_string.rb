@@ -72,3 +72,33 @@ end
 p money("abcdefgh$ijklmnopqrstuvwxyz")
 p money("abcdefghijklmnopqrstuvwxyz")
 p money("i hate $ but i love money i know i know im crazy")
+
+
+#============================================================================
+
+
+# 3. Alternate Capitals
+
+# Given a string, write a function that returns a copy of the original string that has every other character capitalized. (Capitalization should begin with the second character.)
+
+#   Input: “hello, how are your porcupines today?”
+#   Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
+
+
+def upcase(string)
+  index = 0
+  index2 = 1
+  new_string = ‘’
+  while index < string.length
+    new_string << string[index]
+    index += 2
+    new_string << string[index2].to_s.upcase
+    index2 += 2
+  end
+  return new_string
+end
+p upcase(“hello, how are your porcupines today?“)
+
+
+#============================================================================
+
