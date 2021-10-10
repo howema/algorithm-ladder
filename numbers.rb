@@ -204,3 +204,38 @@ p leap_year(1900);  #false
 p leap_year(2000) #true
 
 #note--1997 printed 'nil' originally (bc excluded return false from bottom loop), run through all edge cases when looping through code/debuggin step
+
+#============================================================================
+
+# 5. Multiples of 3 and 5
+
+# If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+# Find the sum of all the multiples of 3 or 5 below 1000.
+
+=begin
+1000 => ??
+
+i = 1
+sum = 0
+loop to 10
+  if i % 3 == 0 || i % 5 == 0
+    sum = index + sum
+  end
+  i++
+end
+=end
+
+def multiples_and_sum
+  i = 1
+  sum = 0
+  while i < 1000
+    if i % 3 == 0 || i % 5 == 0
+      sum = i + sum
+    end
+    i += 1
+  end
+  return sum
+end
+
+p multiples_and_sum #233168
