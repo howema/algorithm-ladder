@@ -39,3 +39,54 @@ def most_common_letter(string)
 end
 
 p most_common_letter("peter piper picked a peck of pickled peppers")
+
+#============================================================================
+
+# 2. Count Votes
+
+# Given an array of strings, return a hash that provides a count of how many times each string occurs.
+
+# Input: ["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]
+
+# Output: {"Dewey" => 6, "Truman" => 5}
+
+# Explanation: "Dewey" occurs 6 times in the array, while "Truman" occurs 5 times.
+
+=begin
+create empty hash
+create index
+loop through length
+string_count = {}
+
+while index < array.length
+  if string_count[array[index]]
+    string_count[array[index]] += 1
+  else
+    string_count[array[index]] = 1
+  end
+
+  index +=1
+iterate index
+p the hash
+=end
+
+def count_votes(array)
+  index = 0
+  string_count = {}
+
+  while index < array.length
+    if string_count[array[index]]
+      string_count[array[index]] += 1
+    else
+      string_count[array[index]] = 1
+    end
+
+    index += 1
+  end
+
+  p string_count
+end
+
+count_votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"])
+
+#============================================================================
