@@ -186,6 +186,41 @@ p dupe("abcdefghijkkloooop")
 # Input: “baloney”
 # Output: false
 
+=begin
+create method to reverse the string
+
+create empty string
+index starts at end
+index iterates backwards
+shovel loop into new string
+
+if string = string.reverse
+  return true
+else
+  return false
+end
+=end
+
+def palindrome(string)
+  i = string.length - 1
+  new_string = ""
+  while i >= 0
+    new_string << string[i]
+    i -= 1
+  end
+
+  if new_string == string
+    return true
+  else
+    return false
+  end
+end
+
+p palindrome("racecar");  #true
+p palindrome("baloney");  #false
+p palindrome("megan");  #false
+p palindrome("hannah") #true
+
 #============================================================================
 
 # 6. Hamming ->
