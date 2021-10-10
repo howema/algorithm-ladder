@@ -303,3 +303,60 @@ end
 p collatz(12) #9
 
 #============================================================================
+
+# 7. Largest Palindrome Product
+
+# A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+=begin
+output => 9009
+
+2 digit numbers: 10-99
+
+99 * 99
+99 * 98
+99 * 97
+
+98 * 98
+
+
+
+p1 = 99
+p2 = 99
+while > 9
+  if p1 * p2 = palidrome
+    p palidrome
+    break
+  else
+    p2 = p2 - 1
+
+
+    p1 = p1 -1
+
+
+
+    end
+  end
+    p1 = p1 - 1
+
+
+check if it is a palindrome
+does 90 match length - 1 number << index -=1
+
+i
+1 2 3 4
+
+1 2 == 4 3
+
+if regular == regular.reverse
+
+  write a method to reverse the number
+  new_array = []
+  i = n.length - 1
+  while i >= 0 
+    new_array << 
+    i -=1
+
+=end
