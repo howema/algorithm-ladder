@@ -1,30 +1,62 @@
-# Given a hash, where the keys are strings representing food items, and the values are numbers representing the price of each food, return the amount someone would pay if they'd order one of each food from the entire menu.
+# 5. RNA
 
-# Input: {"hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, "cole slaw" => 1, "soda" => 2}
+# Given a DNA strand, return its RNA complement (per RNA transcription).
 
-# Output: 14
+# Both DNA and RNA strands are a sequence of nucleotides. Here we're representing the sequences with single-letter characters (e.g. a sample strand may look like: "AGCA".)
 
-# Explanation: If someone would order one of everything on the menu, they'd pay a total of 14 (the sum of all the hash's values).
+# Given a string representing a DNA strand, provide its transcribed RNA strand, according to the following pattern:
+
+# G becomes C
+# C becomes G
+# T becomes A
+# A becomes U
+
+# So based on all this, here's a sample input/output:
+
+# Input: 'ACGTGGTCTTAA'
+# Output: 'UGCACCAGAAUU'
 
 =begin
-index
-create sum = 0
-while hash. length
+we ARE using a string, can use index
+create a hash
+  complementary_letters = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
 
-  sum = sum + hash index value
+  if statement to check which is which
+
+    create index
+    create empty string
+    while loop for length of string
+      for each element, check with hash
+
 iterate index
-return sum
+return empty string
+
+just need to figure out.. if THIS, then THIS
 =end
 
-# def menu(hash)
-#   index = 0
-#   sum = 0
-#   while index < hash.length
-#     sum = sum + hash["key"[index]].to_i
-#     index += 1
-#   end
+def rna(string)
+  complementary_letters = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
+  index = 0
+  rna = ""
+  while index < string.length
+    rna << complementary_letters[string[index]]
+    index += 1
+  end
+  return rna
+end
 
-#   return sum
-# end
+p rna("ACGTGGTCTTAA")
 
-# p menu({ "hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, "cole slaw" => 1, "soda" => 2 })
+def rna(string)
+  complementary_letters = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
+  rna = ""
+
+  string.each_char do |char|
+    rna += complementary_letters[char]
+    # rna = rna + complementary_letters[char]
+  end
+
+  return rna
+end
+
+p rna("ACGTGGTCTTAA")

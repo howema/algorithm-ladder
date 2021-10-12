@@ -206,6 +206,51 @@ p likes([
 # Input: 'ACGTGGTCTTAA'
 # Output: 'UGCACCAGAAUU'
 
+=begin
+we ARE using a string, can use index
+create a hash
+  complementary_letters = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+
+  if statement to check which is which
+
+    create index
+    create empty string
+    while loop for length of string
+      for each element, check with hash
+
+iterate index
+return empty string
+
+just need to figure out.. if THIS, then THIS
+=end
+
+def rna(string)
+  complementary_letters = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
+  index = 0
+  rna = ""
+  while index < string.length
+    rna << complementary_letters[string[index]]
+    index += 1
+  end
+  return rna
+end
+
+p rna("ACGTGGTCTTAA")
+
+def rna(string)
+  complementary_letters = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
+  rna = ""
+
+  string.each_char do |char|
+    rna += complementary_letters[char]
+    # rna = rna + complementary_letters[char]
+  end
+
+  return rna
+end
+
+p rna("ACGTGGTCTTAA")
+
 #============================================================================
 
 # Given a date string in the format Day Month Year, where:
