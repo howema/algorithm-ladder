@@ -1,62 +1,78 @@
-# 5. RNA
+# Given an array of social media posts and a hash of users, return a list of posts (as an array of hashes) that replaces the submitted_by id number as the person's actual name.
 
-# Given a DNA strand, return its RNA complement (per RNA transcription).
+# For example, given this array of posts (note that the submitted_by is an id number):
 
-# Both DNA and RNA strands are a sequence of nucleotides. Here we're representing the sequences with single-letter characters (e.g. a sample strand may look like: "AGCA".)
+# [
+# {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+# {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+# {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+# {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+# ]
 
-# Given a string representing a DNA strand, provide its transcribed RNA strand, according to the following pattern:
+# And this hash of users (the key is the id number and the value is the user's real name):
 
-# G becomes C
-# C becomes G
-# T becomes A
-# A becomes U
+# users = {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."}
 
-# So based on all this, here's a sample input/output:
+# Return the array of posts as follows:
 
-# Input: 'ACGTGGTCTTAA'
-# Output: 'UGCACCAGAAUU'
+# [
+# {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+# {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+# {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+# {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+# ]
 
 =begin
-we ARE using a string, can use index
-create a hash
-  complementary_letters = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+basically changes submitted by from ID to name
+creates empty updated_array
+insert user hash
+  array of posts is the INPUT array
 
-  if statement to check which is which
+each loop
 
-    create index
-    create empty string
-    while loop for length of string
-      for each element, check with hash
+updated_array << users[array[submitted by]]
 
-iterate index
-return empty string
+return updated array
 
-just need to figure out.. if THIS, then THIS
 =end
 
-def rna(string)
-  complementary_letters = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
-  index = 0
-  rna = ""
-  while index < string.length
-    rna << complementary_letters[string[index]]
-    index += 1
+# def names_not_ids(array)
+#   users = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
+#   new_array = []
+
+#   array.each do |hash|
+#     hash[:submitted_by] = users[hash[:submitted_by]] #redefines a value in the hash
+#     new_array << hash #then pushes the new hash into array
+#   end
+
+#   return new_array
+# end
+
+# p names_not_ids([
+#     { title: "Me Eating Pizza", submitted_by: 231, likes: 1549 },
+#     { title: "i never knew how cool i was until now", submitted_by: 989, likes: 3 },
+#     { title: "best selfie evar!!!", submitted_by: 111, likes: 1092 },
+#     { title: "Mondays are the worst", submitted_by: 403, likes: 644 },
+#   ])
+
+def names_not_ids(array, users)
+  new_array = []
+
+  array.each do |hash|
+    hash[:submitted_by] = users[hash[:submitted_by]]
+    new_array << hash
   end
-  return rna
+
+  return new_array
 end
 
-p rna("ACGTGGTCTTAA")
+array = [
+  { title: "Me Eating Pizza", submitted_by: 231, likes: 1549 },
+  { title: "i never knew how cool i was until now", submitted_by: 989, likes: 3 },
+  { title: "best selfie evar!!!", submitted_by: 111, likes: 1092 },
+  { title: "Mondays are the worst", submitted_by: 403, likes: 644 },
+]
 
-def rna(string)
-  complementary_letters = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
-  rna = ""
+hash = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
 
-  string.each_char do |char|
-    rna += complementary_letters[char]
-    # rna = rna + complementary_letters[char]
-  end
-
-  return rna
-end
-
-p rna("ACGTGGTCTTAA")
+p names_not_ids(array, hash)
