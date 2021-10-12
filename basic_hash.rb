@@ -141,3 +141,36 @@ p menu({ "hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, 
 # {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
 # {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
 # ]
+
+=begin
+loop through and check
+
+empty hash
+
+input. each do |k, v|
+  input["likes"]
+  if input["likes"] >= 1000
+    it = the new hash
+  end
+ 
+end
+
+loop checks >=1000
+=end
+
+def likes(array)
+  new_array = []
+  array.each do |hash|
+    if hash[:likes] >= 1000
+      new_array << hash
+    end
+  end
+  return new_array
+end
+
+p likes([
+    { title: "Me Eating Pizza", submitted_by: "Joelle P.", likes: 1549 },
+    { title: "i never knew how cool i was until now", submitted_by: "Lyndon Johnson", likes: 3 },
+    { title: "best selfie evar!!!", submitted_by: "Patti Q.", likes: 1092 },
+    { title: "Mondays are the worst", submitted_by: "Aunty Em", likes: 644 },
+  ])
