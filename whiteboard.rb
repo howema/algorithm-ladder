@@ -36,24 +36,24 @@ return updated array
 
 =end
 
-# def names_not_ids(array)
-#   users = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
-#   new_array = []
+def names_not_ids(array)
+  users = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
+  new_array = []
 
-#   array.each do |hash|
-#     hash[:submitted_by] = users[hash[:submitted_by]] #redefines a value in the hash
-#     new_array << hash #then pushes the new hash into array
-#   end
+  array.each do |hash|
+    hash[:submitted_by] = users[hash[:submitted_by]] #redefines a value in the hash
+    new_array << hash #then pushes the new hash into array
+  end
 
-#   return new_array
-# end
+  return new_array
+end
 
-# p names_not_ids([
-#     { title: "Me Eating Pizza", submitted_by: 231, likes: 1549 },
-#     { title: "i never knew how cool i was until now", submitted_by: 989, likes: 3 },
-#     { title: "best selfie evar!!!", submitted_by: 111, likes: 1092 },
-#     { title: "Mondays are the worst", submitted_by: 403, likes: 644 },
-#   ])
+p names_not_ids([
+    { title: "Me Eating Pizza", submitted_by: 231, likes: 1549 },
+    { title: "i never knew how cool i was until now", submitted_by: 989, likes: 3 },
+    { title: "best selfie evar!!!", submitted_by: 111, likes: 1092 },
+    { title: "Mondays are the worst", submitted_by: 403, likes: 644 },
+  ])
 
 def names_not_ids(array, users)
   new_array = []
@@ -65,6 +65,9 @@ def names_not_ids(array, users)
 
   return new_array
 end
+
+#below I am assigning the two hash inputs to variables, so I can just reference the variable name when calling the function
+#In addition, I made room for 2 different parameters
 
 array = [
   { title: "Me Eating Pizza", submitted_by: 231, likes: 1549 },

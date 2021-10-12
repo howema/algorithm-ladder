@@ -157,6 +157,8 @@ def duplicate(string)
   end
 end
 
+#======================================
+
 duplicate("abcdefghhijkkloooop")
 
 def dupe(string)
@@ -221,6 +223,8 @@ p palindrome("baloney");  #false
 p palindrome("megan");  #false
 p palindrome("hannah") #true
 
+#======================================
+
 def palindrome?(string)
   i = 0
   while i < (string.length / 2)
@@ -259,17 +263,3 @@ p palindrome?("whatupbutt")
 # Output: “so thought i yeah it isn’t cool so is popcorn”
 
 #============================================================================
-
-def palindrome?(string)
-  i = 0
-  while i < (string.length / 2)
-    if string[i] != string[-(i + 1)]
-      return false
-    else
-      i += 1
-    end
-  end
-  return true
-end
-
-p palindrome?("whatupbutt")
