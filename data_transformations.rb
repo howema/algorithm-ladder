@@ -42,6 +42,8 @@ def make_hash(array, number)
   return hash
 end
 
+#===================
+
 p make_hash(["a", "e", "i", "o", "u"], 1)
 
 def make_hash(array, number)
@@ -54,10 +56,16 @@ end
 
 p make_hash(["a", "e", "i", "o", "u"], 1)
 
+#===================
+
 def make_hash(array, number)
   hash = {}
   array.each { |element| hash[element] = number }
   return hash
 end
 
+#gets rid of "do" puts as block/all on one line
+
 p make_hash(["a", "e", "i", "o", "u"], 1)
+
+#============================================================================
