@@ -253,6 +253,37 @@ p palindrome?("whatupbutt")
 # Input: "ABCDEFG", "ABCDEFG",
 # Output: 0
 
+=begin
+given 2 strings, returning a number (of the differences)
+
+function, params, call function, return the number
+
+create count variable
+create index
+loop
+  if string1[index] == string2[index]
+    count +=1
+  end
+  iterate through index
+
+=end
+
+def hamming(string1, string2)
+  count = 0
+  index = 0
+
+  while index < string1.length
+    if string1[index] != string2[index]
+      count += 1
+    end
+    index += 1
+  end
+  return count
+end
+
+p hamming("ABCDEFG", "ABCXEOG") #2
+p hamming("ABCDEFG", "ABCDEFG") #0
+
 #============================================================================
 
 # 7. Reverse Words
