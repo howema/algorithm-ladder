@@ -288,9 +288,82 @@ p hamming("ABCDEFG", "ABCDEFG") #0
 
 # 7. Reverse Words
 
+# 7. Reverse Words
+
 # Given a string of words, write a function that returns a new string that contains the words in reverse order.
 
-# Input: “popcorn is so cool isn’t it yeah i thought so”
-# Output: “so thought i yeah it isn’t cool so is popcorn”
+# Input: "popcorn is so cool isn’t it yeah i thought so"
+# Output: "so thought i yeah it isn’t cool so is popcorn"
+
+=begin
+given string,
+return a new STRING
+
+
+string.split
+shovel into new array
+turn into string
+
+create empty string, for later, after using array
+
+return new string
+
+=end
+
+def reverse_string(string)
+  split_words = string.split
+
+  new_string = ""
+  new_array = []
+
+  index = split_words.length - 1
+  while index >= 0
+    new_array << split_words[index]
+    index -= 1
+  end
+
+  index = 0
+  while index < new_array.length
+    new_string << new_array[index] + " "
+    index += 1
+  end
+
+  p new_string
+end
+
+reverse_string("popcorn is so cool isn’t it yeah i thought so")
+# "so thought i yeah it isn’t cool so is popcorn"
+
+#======================================
+
+def reverse_words(string)
+  words = string.split(" ")
+  new_arr = []
+  i = words.length - 1
+
+  while i >= 0
+    new_arr << words[i]
+    i -= 1
+  end
+
+  new_arr.join(" ")
+end
+
+p reverse_words("popcorn is so cool isn't it yeah i thought so") # => "so thought i yeah it isn't cool so is popcorn"
+
+#======================================
+
+def reverse_words(string)
+  words = string.split(" ")
+  new_arr = []
+
+  words.reverse_each do |word|
+    new_arr << word
+  end
+
+  new_arr.join(" ")
+end
+
+p reverse_words("popcorn is so cool isn't it yeah i thought so") # => "so thought i yeah it isn't cool so is popcorn"
 
 #============================================================================
