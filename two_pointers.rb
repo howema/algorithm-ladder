@@ -111,3 +111,22 @@ def coolio?(array)
 end
 
 p coolio?([90, 20, 70, 100, 30, 80, 10])
+
+#============================================================================
+
+# 7. Longest Common Prefix
+
+def common_prefix(array)
+  output = ""
+  i = 0
+  while i < array.length
+    if array[0][i] == array[1][i] && array[0][i] == array[2][i]
+      output += array[0][i]
+    end
+    i += 1
+  end
+  return output
+end
+
+p common_prefix(["flower", "flow", "flight"])
+p common_prefix(["dog", "racecar", "car"])
