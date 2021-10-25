@@ -92,3 +92,22 @@ p coolio([90, 20, 70, 100, 30, 80, 10]) #true
 p coolio([1, 2, 3, 1, 1, 3]) #false
 
 #note: = is assignment, == is verification
+
+#======================================
+
+def coolio?(array)
+  i = 0
+  while i <= array.length / 2
+    if array[i] + array[-(i + 1)] == 100
+      i += 1
+      if array[array.length / 2.0] == 100
+        return true
+      end
+    else
+      return false
+    end
+  end
+  return true
+end
+
+p coolio?([90, 20, 70, 100, 30, 80, 10])
