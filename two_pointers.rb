@@ -47,6 +47,56 @@ array_mesh_one(["a", "b", "c"], ["d", "e", "f", "g"])
 
 #============================================================================
 
+# 2. Array Mesh II
+
+# Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+
+# Input: ["a", "b", "c", "d"]
+# Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+=begin
+create array, for shoveling
+
+params --> one array
+
+
+i1 = 0
+while loop for i1
+  i2 = 0
+    while i2 < array.length
+      if i1 != i2, 
+        then shovel
+      end
+      i2 +=1
+    end
+    
+    i1 +=1
+
+return new_array
+
+=end
+
+def array_mesh_II(array)
+  new_array = []
+  i1 = 0
+  while i1 < array.length
+    i2 = 0
+    while i2 < array.length
+      if array[i1] != array[i2]
+        new_array << array[i1] + array[i2]
+      end
+      i2 += 1
+    end
+    i1 += 1
+  end
+  return new_array
+end
+
+p array_mesh_II(["a", "b", "c", "d"])
+# ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+#============================================================================
+
 # 6. Coolio Array
 
 # Given an array of numbers, return true if the array is a "100 Coolio Array", or false if it is not.
