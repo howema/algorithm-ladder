@@ -49,16 +49,35 @@ loop
 return
 */
 
+//WHILE LOOP:
+
+// function lessThanHundred(array) {
+//   let index = 0;
+//   let newArray = [];
+
+//   while (index < array.length) {
+//     if (array[index] < 100) {
+//       newArray.push(array[index]);
+//     }
+//     index += 1;
+//   }
+//   return newArray;
+// }
+
+// console.log(lessThanHundred([99, 101, 88, 4, 2000, 50]));
+
+//===================
+
+//EACH LOOP:
+
 function lessThanHundred(array) {
-  let index = 0;
   let newArray = [];
 
-  while (index < array.length) {
-    if (array[index] < 100) {
-      newArray.push(array[index]);
+  array.forEach(function (element) {
+    if (element < 100) {
+      newArray.push(element);
     }
-    index += 1;
-  }
+  });
   return newArray;
 }
 
