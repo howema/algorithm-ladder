@@ -7,19 +7,21 @@
 
 // Explanation: (1 + 2 + 3 + 4) = 10
 
-function arraySum() {
-  var array = [1, 2, 3, 4];
+/*
+loop inside a function
+iterate
+have sum variable
+*/
+
+function arraySum(array) {
   let len = array.length;
-  var sum = 0;
+  let sum = 0;
   for (var i = 0; i < len; i++) {
-    // sum += array[i];
+    sum = array[i] + sum;
   }
-  // console.log(sum);
+  return sum;
 }
 
-console.log(arraySum);
+console.log(arraySum([1, 2, 3, 4]));
 
-// function helloWorld() {}
-
-// console.log("Hello");
-// helloWorld;
+//im literally a genius
